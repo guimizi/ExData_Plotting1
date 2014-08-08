@@ -1,7 +1,6 @@
 library(data.table)
 
-downloadFile <- function(fileName="house_hold_power_consumption.zip", workDir="./temp") {
-    url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+downloadFile <- function(url, fileName, workDir="./temp") {
     checkDir(workDir)
     filePath <- paste(workDir,fileName, sep="/")
     if(!file.exists(filePath)){
@@ -33,7 +32,9 @@ init <- function() {
 
 getData <- function() {
     init()
-    filePath <- downloadFile();
+    url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+    fileName <- "house_hold_power_consumption.zip"
+    filePath <- downloadFile(url, fileName);
     unzippedFilePath <- unzipFile(filePath)
     addDateTimeColumn(setColumnClasses(loadData(unzippedFilePath)))
 }

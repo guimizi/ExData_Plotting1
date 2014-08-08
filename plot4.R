@@ -12,13 +12,14 @@ buildGlobalReactivePowerPlot <- function(data) {
 }
 
 buildCombinedPlot <- function(data) {
-    par(mfrow=c(2,2)
+    par(mfrow=c(2,2))
     globalActivePowerPlot(data)
     buildVoltagePlot(data)
     buildSubMeteringPlot(data, F)
     buildGlobalReactivePowerPlot(data)
 }
 
+#Function to generate plot4.png
 buildPngPlot4 <- function() {
     buildPngPlot(buildCombinedPlot, "plot4.png")    
 }

@@ -10,6 +10,7 @@ buildSubMeteringPlot <- function(data, legendBorder=T) {
 
 }
 
+#Function to generate plot3.png
 buildPngPlot3 <- function() {
     buildPngPlot(buildSubMeteringPlot, "plot3.png")    
 }
