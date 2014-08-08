@@ -1,4 +1,3 @@
-source("plot1.R")
 source("plot2.R")
 source("plot3.R")
 
@@ -13,15 +12,11 @@ buildGlobalReactivePowerPlot <- function(data) {
 }
 
 buildCombinedPlot <- function(data) {
-    par(mfrow=c(2,2))
+    par(mfrow=c(2,2)
     globalActivePowerPlot(data)
     buildVoltagePlot(data)
     buildSubMeteringPlot(data, F)
     buildGlobalReactivePowerPlot(data)
-}
-
-run <- function() {
-    buildCombinedPlot(getData())
 }
 
 buildPngPlot4 <- function() {
